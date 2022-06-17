@@ -16,7 +16,7 @@
     <?php
         include("conexion.php");
         $libros="SELECT*FROM nomlibros";
-        $resultado=mysqli_query($conexion,$libros);
+        $resultado=mysqli_query($Con,$libros);
         while($consulta=mysqli_fetch_array($resultado)){
             echo'<option value="'.$consulta[$nombre].'">'.$consulta[$nombre].'</option>';
         }

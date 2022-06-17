@@ -1,9 +1,10 @@
 <?php
-    $nombreservidor="localhost";
-    $nombreusuario="root";
-    $contrasena="";
-    $basededatos="biblioteca";
-    $conexion="mysqli_connect($nombreservidor,$nombreusuario,$contrasena,$basededatos)";
+    $NombreServidor="localhost";
+    $NombreUsuario="root";
+    $Contraseña="";
+    $BaseDeDatos="biblioteca";
+    $Conexion="mysqli_connect($NombreServidor,$NombreUsuario,$Contraseña,$BaseDeDatos)";
 
-    echo"Realizaste bien la conexión";
+    echo "Se realizo bien la conexion";
+
 ?>

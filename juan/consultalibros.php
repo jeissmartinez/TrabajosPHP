@@ -2,7 +2,7 @@
 
     include("conexion.php");
     
-    $usuarios="SELECT * FROM libros";
+    $usuarios="SELECT *FROM libros";
 ?>
 
 <html>
@@ -19,7 +19,7 @@
             <th>Autor</th>
         </tr>
     <?php
-        $resultado = mysqli_query($conexion,$usuarios);
+        $resultado = mysqli_query($Con,$usuarios);
         while($columnas=mysqli_fetch_assoc($resultado)) {
     ?>
         <tr>

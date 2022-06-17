@@ -7,7 +7,7 @@
               <option value="">Seleccione</option>
 
               <?php
-                include("conexion.php")
+                include "conexion.php";
                   $libros= "SELECT * FROM libros";
                   $resultado= mysqli_query($conexion,$libros);
                     
