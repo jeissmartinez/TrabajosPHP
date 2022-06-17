@@ -1,3 +1,7 @@
+<?php
+    include("conexion.php"); 
+    $usiarios="SELECT * FROM usuarios";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,28 +19,14 @@
                     <option value="">Seleccione</option>
                     <php
                         include("conexion.php");
-                        
+                        $libros = "SELECT * FROM nombre_de_libro";
+                        $resultado = mysql_query($conexion, $libros);
+                        while($fila = mysql_fetch_array($resultado)){
+                            echo '<option value=".$fila[nombre]">"$fila[nombre]"</option>';
+                        }
                     ?>
-                    <option value="">sobre heroes y tumbas</option>
-                    <option value="f">padre rico padre pobre</option>
-                    <option value="m">la metamorfosis</option>
-                </select>
-                <label>autor</label>
-                <select name="autor_f" required>
-                    <option value="">Seleccione</option>
-                    <option value="">ernesto sabato</option>
-                    <option value="">Robert Kiyosaki </option>
-                    <option value="">Franz Kafka</option>
-                </select>
-                <label>editorial</label>
-                <select name="editorial_f" required>
-                    <option value="">Seleccione</option>
-                    <option value="">Norma</option>
-                    <option value="">Gato Negro</option>
-                    <option value="">Planeta</option>
-                </select>
-
                 <input type="submit" value="Guardar">
+                <button id="boton1"><a href="consulta.php">consulta bases de datos</a></button>
                     
             </form>
         </article>
