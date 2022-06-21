@@ -11,14 +11,16 @@ $usuarios="SELECT * FROM libros";
                 <th>nombre</th>
             </tr>
             <?php
-            $resultado=mysql_query($conexion,$usuarios);
-            while($filas=mysql_fetch_array($resultado))
+            $resultado=mysqli_query($conexion,$usuarios);
+            while($filas=mysqli_fetch_array($resultado))
             {
             ?>
             <tr>
-                <td><?php echo $filas["nombre"]?></td>;
+                <td><?php echo $filas["nombre"]?></td>
             </tr>
-                ?>
+            <?php
+            }
+            ?>
             </table>
     </body>
 </html>

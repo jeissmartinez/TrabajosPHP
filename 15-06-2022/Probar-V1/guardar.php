@@ -1,5 +1,5 @@
 <?php
-    include ("conexion.php")
+    include ("conexion.php");
     $nombre=$_POST["nombref"];
     $insertar="INSERT INTO libros(nombre) values('$nombre')";
     $resultado=mysqli_query($conexion,$insertar);
