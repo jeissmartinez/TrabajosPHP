@@ -1,14 +1,17 @@
-<html><head></head>
-<body bgcolor="pink">
-	<center><h1>Inicio de Sesion</h1>
-		<form action="#" method="POST">
-			Nombre Usuario<br><input type="text" name="nomusuario"><br>
-			Contraseña    <br><input type="password" name="clave"><br>
-			Sesion            <input type="submit" value="IniciarSesion"><br>
-			Limpiar			  <input type="reset" value="LimpiarCampos"><br>
-		</form>
-	</center>
-
+<html><head>
+	<link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+<body>
+	<section class="section">
+		<center><h1>Inicio de Sesion</h1>
+			<form action="#" method="POST">
+				Nombre Usuario<br><input type="text" name="nomusuario"><br>
+				Contraseña    <br><input type="password" name="clave"><br>
+				Sesion            <input type="submit" value="IniciarSesion"><br>
+				Limpiar			  <input type="reset" value="LimpiarCampos"><br>
+			</form>
+		</center>
+	</section>
 
 
 <?php
