@@ -7,10 +7,9 @@ include_once 'conexion.php';
   }
   else
   {
-   if ($_SESSION['rol'] !=2)
-   {
-    header('Location: login.php');
-   }
+    if ($_SESSION['rol'] !=2){
+      header('Location: login.php');
+    }
   }
 ?>
 
@@ -31,7 +30,7 @@ include_once 'conexion.php';
           echo "El segundo numero es: 5<br><br>";
           echo "<b>El resultado de la resta es:</b>".$resultado;
           ?>
-           <br><br><br><input type="submit" value="CerrarSesion" name="cerrar_sesion">
+          <br><br><br><input type="submit" value="CerrarSesion" name="cerrar_sesion">
         </form>
     </body>
 </html>
