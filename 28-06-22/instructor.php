@@ -16,21 +16,31 @@ include_once 'conexion.php';
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="styles.css" type="text/css">
         <title>Instructor</title>
     </head>
 
     <body>
-        <h1>Instructor</h1>
-        <form action="login.php" method="post">
+      <?php
+      $conexion=mysqli_connect('localhost','root','','crud') or die ('problems en la conexion');
+      ?>
+      <div align="center" class="section">
         <?php
-          $num1= 10;
-          $num2= 5;
-          $resultado= $num1 - $num2;
-          echo "El primer numero es: 10<br>";
-          echo "El segundo numero es: 5<br><br>";
-          echo "<b>El resultado de la resta es:</b>".$resultado;
-          ?>
-          <br><br><br><input type="submit" value="CerrarSesion" name="cerrar_sesion">
+        $usuario = $_SESSION['nomusuario'];
+        $fotosesion = $_SESSION['foto'];
+        $email = $_SESSION['email'];
+
+			echo "<font face= impact size= 5> Bienvenid@ <br>Invitad@  <br>".$usuario."</font><br>";
+      echo "<font face= impact size= 5> Su correo es: ".$email."</font><br>";	
+			echo "<div align='center'><img src='imagenes/$fotosesion ?>' width='200' height='160' ></div>";	
+		
+        ?>
+      </div>
+
+      <div align="center" class="section">	
+        <form action="login.php" method="POST">
+          <input type="submit" name="cerrar_sesion" value="CERRAR SESION">
         </form>
+      </div>
     </body>
 </html>

@@ -16,22 +16,27 @@ include_once 'conexion.php';
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="styles.css" type="text/css">
         <title>Admin</title>
     </head>
 
     <body>
-        <h1>Administrador</h1>
-        <form action="login.php" method="post">
-          <?php
-          $num1= 5;
-          $num2= 5;
-          $resultado= $num1 + $num2;
-          echo "El primer numero es: 5<br>";
-          echo "El segundo numero es: 5<br><br>";
-          echo "<b>El resultado de la suma es:</b>".$resultado;
-          ?>
-            <br><br><br><input type="submit" value="CerrarSesion" name="cerrar_sesion">
-            
+      <?php
+      $conexion=mysqli_connect('localhost','root','','crud') or die ('problems en la conexion');
+      ?>
+      <div align="center" class="section">
+        <?php
+        $usuario = $_SESSION['nomusuario'];
+        $fotosesion = $_SESSION['foto'];
+        echo "<font face= impact size= 6> Bienvenid@ <br>Invitad@  <br>".$usuario."</font><br>";
+        echo "<div align='center'><img src='imagenes/$fotosesion ?>' width='200' height='160' ></div>";	
+        ?>
+      </div>
+
+      <div align="center" class="section">	
+        <form action="login.php" method="POST">
+          <input type="submit" name="cerrar_sesion" value="CERRAR SESION">
         </form>
+      </div>
     </body>
 </html>

@@ -37,7 +37,7 @@
 				header('Location: aprendiz.php');
 				break;
 			case 4:
-				header('Location: invitado.php');
+				header('Location: invitado1.php');
 				break;
 			default:
 				echo "No estoy en nada";
@@ -49,7 +49,7 @@
 			$username = $_POST['nomusuario'];
 			$password = $_POST['clave'];
 			$db = new Database();
-			$query = $db->connect()->prepare('SELECT *FROM usuarios WHERE usuarios = :nomusuario AND clave =:clave');
+			$query = $db->connect()->prepare('SELECT *FROM usuarios WHERE nomusuario = :nomusuario AND clave =:clave');
 			$query->execute(['nomusuario' =>$username, 'clave'=>$password]);
 			$arreglofila = $query->fetch(PDO::FETCH_NUM);
 			if ($arreglofila == true) 
@@ -68,12 +68,18 @@
 							header('Location: aprendiz.php');
 						break;
 						case 4: 
-							header('Location: invitado.php');
+							header('Location: invitado1.php');
 						break;
 
 						default: "No estoy en nada";
 						break;
 						}
+						$usuario=$arreglofila[1];
+						$_SESSION['nomusuario'] = $usuario;
+						$fotosesion = $arreglofila[5];
+						$_SESSION['foto'] = $fotosesion;
+						$email = $arreglofila[4];
+						$_SESSION['email'] = $email;
 				}
 			else
 				{
