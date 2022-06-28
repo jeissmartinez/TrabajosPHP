@@ -1,0 +1,12 @@
+body{
+    background-color: #b183c3;
+    font-family:cursive;
+}
+.section{
+    background-color: #83c3b1;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 5%;
+    padding: 2%;
+    border-radius: 19px;
+}
