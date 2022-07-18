@@ -21,16 +21,29 @@ include_once 'conexion.php';
 
     <body>
         <h1>Instructor</h1>
+      <div>
+        <form action="#" method="post">
+          <label>Nombre</label><input type="text" name="nombre"><br>
+          <label>Clave</label><input type="Password" name="Clave"><br>
+          <label>Correo</label><input type="text" name="correo"><br>
+          <label>ID_Rol</label><input type="number" name="idrol"><br>
+          <input type="submit" value="Insertar datos" name="insertar">
+        </form>        
+      </div>
+      <?php
+        if (isset($_POST['Insertar'])) {
+          $nombre = $_POST['nombre'];
+          $clave = $_POST['Clave'];
+          $correo = $_POST['correo'];
+          $idrol = $_POST['idrol'];
+          $db = new Database();
+          $query = $db->connect()->prepare('INSERT INTO usuarios (nombre, clave, correo, id_rol) VALUES (:nombre, :clave, :correo, :idrol)');
+          $query->execute(['nombre' =>$nombre, 'clave'=>$clave, 'correo'=>$correo, 'idrol'=>$idrol]);
+        }
+      ?>
+        </form>
         <form action="login.php" method="post">
-        <?php
-          $num1= 10;
-          $num2= 5;
-          $resultado= $num1 - $num2;
-          echo "El primer numero es: 10<br>";
-          echo "El segundo numero es: 5<br><br>";
-          echo "<b>El resultado de la resta es:</b>".$resultado;
-          ?>
-          <br><br><br><input type="submit" value="CerrarSesion" name="cerrar_sesion">
+            <br><br><br><input type="submit" value="CerrarSesion" name="cerrar_sesion">
         </form>
     </body>
 </html>

@@ -49,7 +49,7 @@
 			$username = $_POST['nomusuario'];
 			$password = $_POST['clave'];
 			$db = new Database();
-			$query = $db->connect()->prepare('SELECT *FROM usuarios WHERE nomusuario = ' . $username . ' AND:nomusuario AND clave =:clave');
+			$query = $db->connect()->prepare('SELECT *FROM usuarios WHERE nomusuario = :nomusuario AND clave =:clave');
 			$query->execute(['nomusuario' =>$username, 'clave'=>$password]);
 			$arreglofila = $query->fetch(PDO::FETCH_NUM);
 			if ($arreglofila == true) 

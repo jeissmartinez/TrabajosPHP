@@ -1,15 +1,15 @@
 <?php
-include_once 'conexionPDO.php';
+include_once 'conexion.php';
 session_start();
 if(!isset($_SESSION['rol']))
 	{
-		header('location: loginphp.php');
+		header('location: login.php');
 	}
 else
 	{
 		if($_SESSION['rol'] !=3)
 			{
-				header('location: loginphp.php');
+				header('location: login.php');
 			}
 	}
 ?>
@@ -106,15 +106,15 @@ if(isset($_POST['actualizame']))
 		}
 	else
 		{
-			echo "<script>
-								alert ('no se pudo EDITAR')
-							 </script> ";
+			echo"<script>
+					alert ('no se pudo EDITAR')
+				</script> ";
 		}
 	}
 	//unset($_POST['actualizame']);
 ?>
 <div align="center">
-	<form action="loginphp.php" method="POST">
+	<form action="login.php" method="POST">
 		<input type="submit" name="cerrar_sesion" value="CERRAR SESION">
 	</form>
 </div>
