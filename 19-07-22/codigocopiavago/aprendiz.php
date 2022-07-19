@@ -1,12 +1,17 @@
 <?php
-  include_once 'conexion.php';
-  session_start();
-    if(!isset($_SESSION['rol']))
-        header('location: login.php');
-    else{
-        if($_SESSION['rol'] !=3)
-            header('location: login.php');
-    }
+include_once 'conexion.php';
+session_start();
+if(!isset($_SESSION['rol']))
+	{
+		header('location: login.php');
+	}
+else
+	{
+		if($_SESSION['rol'] !=3)
+			{
+				header('location: login.php');
+			}
+	}
 ?>
 <html><head></head>
 <body>

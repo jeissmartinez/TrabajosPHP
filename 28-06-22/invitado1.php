@@ -55,6 +55,7 @@ else
 				<td><?php echo $clave; ?></td>
 			</tr>
 		</table>
+		
 
 		<div align="center" class="section">	
 			<form action="login.php" method="POST">
